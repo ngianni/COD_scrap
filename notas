@@ -1,0 +1,32 @@
+function getDay ( cadena ){
+
+  // extraigo dia de la cadena
+  cadena = cadena.split(" ").pop()                                 // tomo ultima palabra del string
+  cadena = cadena.toLowerCase()                                    // convierto a minusculas
+  cadena = cadena.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // quito acentos
+  
+  // llevo a singular los dias plurales
+  if (cadena == 'sabados' || cadena == 'domingos'){ 
+      cadena = cadena.slice(0, -1)
+  }
+
+  return cadena
+}
+
+
+
+let dias = [];
+document.querySelectorAll("[jstcache='996']").forEach( function (node) { dias.push( getDay( node.innerText ) ) } );
+console.log(dias)
+
+
+========================================================================================================================
+
+nodos = document.querySelectorAll("[jstcache='1055']")
+for (nodo of nodos){
+    console.log( nodo.ariaLabel )
+}
+
+
+
+========================================================================================================================

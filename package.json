@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "constants": "^0.0.2",
+    "css.escape": "^1.5.1",
+    "puppeteer": "^10.2.0"
+  }
+}
