@@ -1,32 +1,34 @@
-function getDay ( cadena ){
+// nombre   *OK*
+// puntuacion *OK*
+// cantidad de reviews   *OK*
+// tipo de lugar   *OK*
+// direccion   *OK*
+// sitio web   *OK*
+// tabla de horarios
+// horarios populares (array de arrays [lunes [x x x x ]; martes [x x x x ]; ...])   *OK*
+// distribucion estrellas   *OK*
+// palabras mas frecuentes
+// latitud y longitud   *OK*
+// atributos del lugar
 
-  // extraigo dia de la cadena
-  cadena = cadena.split(" ").pop()                                 // tomo ultima palabra del string
-  cadena = cadena.toLowerCase()                                    // convierto a minusculas
-  cadena = cadena.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // quito acentos
-  
-  // llevo a singular los dias plurales
-  if (cadena == 'sabados' || cadena == 'domingos'){ 
-      cadena = cadena.slice(0, -1)
-  }
+// reviews:
 
-  return cadena
-}
+// por cada filtro/tag (total 11):
+//    -> por relevancia
+//    -> por antiguedad
+//    -> por mejor calificacion
+//    -> por peor calificacion
 
+// review:
+//    -> nombre
+//    -> local guide
+//    -> opiniones
+//    -> valoracion
+//    -> fecha
+//    -> review
 
-
-let dias = [];
-document.querySelectorAll("[jstcache='996']").forEach( function (node) { dias.push( getDay( node.innerText ) ) } );
-console.log(dias)
-
-
-========================================================================================================================
-
-nodos = document.querySelectorAll("[jstcache='1055']")
-for (nodo of nodos){
-    console.log( nodo.ariaLabel )
-}
-
-
-
-========================================================================================================================
+// PENDIENTES
+// convertir a enteros los numeros de info
+// poner porcentaje real { estrellas, cant, porc_real, porc}
+// palabras frecuentes: poner frecuencias como enteros
+// coordenadas: poner lat y long como numero flotante
